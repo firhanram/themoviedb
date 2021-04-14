@@ -1,10 +1,11 @@
 import GlobalStyle from './globalStyle'
+import { Navbar } from './components'
 
 function App() {
   return (
     <div>
       <GlobalStyle />
-      <div>Hello World</div>
+      <Navbar />
     </div>
   );
 }

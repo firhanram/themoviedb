@@ -27,4 +27,9 @@ export const Container = styled.div`
     margin-right: auto;
 `
 
+export const lightBlack = '#393534'
+export const black = '#22211F';
+export const orange = '#FF7314';
+export const lightGray = '#4F4F4'
+
 export default globalStyle
