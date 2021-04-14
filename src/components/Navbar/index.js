@@ -1,11 +1,26 @@
-import { Brand, MenuWrapper, Nav } from './style'
+import { Brand, Wrapper, Nav, Menu, NavMenu, NavList, DropdownMenu, NavLink } from './style'
 
 const Navbar = () => {
     return (
         <Nav>
-            <MenuWrapper>
+            <Wrapper>
                 <Brand>The Movie DB</Brand>
-            </MenuWrapper>
+                <Menu>
+                    <NavMenu>
+                        <NavList>
+                            Movies
+                            <DropdownMenu>
+                                <NavLink>Popular</NavLink>
+                                <NavLink>Now Plyaing</NavLink>
+                                <NavLink>Upcoming</NavLink>
+                                <NavLink>Top Rated</NavLink>
+                            </DropdownMenu>
+                        </NavList>
+                        <NavList>TV Shows</NavList>
+                        <NavList>People</NavList>
+                    </NavMenu>
+                </Menu>
+            </Wrapper>
         </Nav>
     )
 }
