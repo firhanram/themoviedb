@@ -1,5 +1,5 @@
 import GlobalStyle from './globalStyle'
-import { Hero, Navbar } from './components'
+import { Hero, Navbar, Popular } from './components'
 import { BrowserRouter as Router} from 'react-router-dom'
 import { useEffect } from 'react';
 import { connect } from 'react-redux'
@@ -15,6 +15,7 @@ function App(props) {
       <GlobalStyle />
       <Navbar />
       <Hero/>
+      <Popular />
     </Router>
   );
 }
