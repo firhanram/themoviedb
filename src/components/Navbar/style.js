@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import {  Container, lightGray, orange } from '../../globalStyle'
-import { Link } from 'react-router-donm'
+import { Link } from 'react-router-dom'
 
 export const Nav = styled.nav`
     background-color: ${lightGray};
