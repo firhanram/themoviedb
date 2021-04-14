@@ -11,6 +11,14 @@ const globalStyle = createGlobalStyle`
         font-size: 100%;
         font-family: 'Source Sans Pro', sans-serif;
     }
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        list-style: none;
+    }
 `
 
 export default globalStyle
