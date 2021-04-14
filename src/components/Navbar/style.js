@@ -37,6 +37,7 @@ export const DropdownMenu = styled.div`
     background-color: ${black};
     margin-top: .5rem;
     visibility:hidden;
+    z-index: 1;
     opacity: 0;
     transition: all 280ms ease-in-out;
     box-shadow: -2px 0px 10px 0px rgba(0,0,0,0.05);
