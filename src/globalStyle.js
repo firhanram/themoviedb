@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components'
+import styled, {createGlobalStyle} from 'styled-components'
 
 const globalStyle = createGlobalStyle`
     *{
@@ -19,6 +19,12 @@ const globalStyle = createGlobalStyle`
     li {
         list-style: none;
     }
+`
+
+export const Container = styled.div`
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
 `
 
 export default globalStyle
