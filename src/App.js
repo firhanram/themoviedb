@@ -1,11 +1,14 @@
 import GlobalStyle from './globalStyle'
+import { Hero, Navbar } from './components'
+import { BrowserRouter as Router} from 'react-router-dom'
 
 function App() {
   return (
-    <div>
+    <Router>
       <GlobalStyle />
-      <div>Hello World</div>
-    </div>
+      <Navbar />
+      <Hero/>
+    </Router>
   );
 }
 
