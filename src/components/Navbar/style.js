@@ -35,11 +35,10 @@ export const DropdownMenu = styled.div`
     width: 150px;
     border-radius: 5px;
     background-color: ${black};
-    margin-top: 1rem;
-    left: -0.5rem;
+    margin-top: .5rem;
     visibility:hidden;
     opacity: 0;
-    transition: all 200ms ease-in-out;
+    transition: all 280ms ease-in-out;
     box-shadow: -2px 0px 10px 0px rgba(0,0,0,0.05);
 `
 
@@ -50,6 +49,10 @@ export const NavList = styled.li`
     &:hover ${DropdownMenu} {
         opacity: 1;
         visibility: visible;
+    }
+
+    &:hover {
+        color: ${orange};
     }
 
     &:not(:first-child) {
@@ -65,7 +68,7 @@ export const NavLink = styled(Link)`
     transition: all 200ms ease-in-out;
 
     &:hover {
-        color: rgba(255, 255, 255, .8);
+        color: ${orange};
     }
 
     &:not(:first-child) {

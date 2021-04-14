@@ -16,8 +16,21 @@ const Navbar = () => {
                                 <NavLink>Top Rated</NavLink>
                             </DropdownMenu>
                         </NavList>
-                        <NavList>TV Shows</NavList>
-                        <NavList>People</NavList>
+                        <NavList>
+                            TV Shows
+                            <DropdownMenu>
+                                <NavLink>Popular</NavLink>
+                                <NavLink>Airing Today</NavLink>
+                                <NavLink>On Tv</NavLink>
+                                <NavLink>Top Rated</NavLink>
+                            </DropdownMenu>
+                        </NavList>
+                        <NavList>
+                            People
+                            <DropdownMenu>
+                                <NavLink>Popular People</NavLink>
+                            </DropdownMenu>
+                        </NavList>
                     </NavMenu>
                 </Menu>
             </Wrapper>
