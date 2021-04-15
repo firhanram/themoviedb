@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { Category, Container, lightOrange } from '../../globalStyle'
 
-export const PopularSection = styled.section`
+export const LatestTrailersSection = styled.section`
     width: 100%;
-    margin-top: 5rem;
-
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    
     .slick-slide {
         height: 100%;
         &:not(:first-child) {
@@ -20,13 +20,6 @@ export const PopularSection = styled.section`
         height: 100%;
     }
 `
-
-export const Heading = styled.h3`
-    font-weight: 700;
-    color: black;
-    font-size: 2rem;
-`
-
 
 export const Img = styled.img`
     border-radius: 5px;

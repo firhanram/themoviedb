@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 
 export const Nav = styled.nav`
     background-color: ${lightGray};
-    box-shadow: -2px 0px 10px 0px rgba(0,0,0,0.05); 
     padding: 1rem 0;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0, 0.2); 
 `
 
 export const Wrapper = styled(Container)`

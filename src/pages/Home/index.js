@@ -1,10 +1,11 @@
-import { Hero, Popular } from "../../components"
+import { Hero, Trending, Popular } from "../../components"
 
 const Home = () => {
     return (
         <>
             <Hero />
             <Popular />
+            <Trending />
         </>
     )
 }

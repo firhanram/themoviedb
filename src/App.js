@@ -1,9 +1,9 @@
 import GlobalStyle from './globalStyle'
-import { Hero, Navbar, Popular } from './components'
+import { Navbar } from './components'
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import { Home } from './pages';
+import { Home, NowPlayingMovies, Popular as PopularPage, UpcomingMovies, TopRatedMovies } from './pages';
 import history from './utils/history';
 
 function App(props) {
@@ -14,6 +14,10 @@ function App(props) {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/movie/popular" component={PopularPage} />
+        <Route exact path="/movie/now-playing" component={NowPlayingMovies} />
+        <Route exact path="/movie/upcoming" component={UpcomingMovies} />
+        <Route exact path="/movie/top-rated" component={TopRatedMovies} />
       </Switch>
     </Router>
   );

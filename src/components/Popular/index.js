@@ -1,14 +1,13 @@
-import { PopularSection, TypeWrapper, Wrapper } from './style'
+import {PopularSection, Img } from './style'
 import Slider from "react-slick";
-import { Heading, Img, TextWrapper, Type } from './style';
 import { fetchPopularMovies } from '../../actions/moviesAction'
 import {fetchPopularTvShows} from '../../actions/tvAction'
 import { connect } from 'react-redux'
 import { useEffect, useState } from 'react';
-import { Container, lightOrange } from '../../globalStyle';
+import { CategoryWrapper, Container, SectionTitle, TextWrapper, Category } from '../../globalStyle';
+import { IMAGE_URL } from '../../apis/themoviedb'
 
 const Popular = ({movies, fetchPopularMovies, fetchPopularTvShows, tvShows}) => {
-    const imageUrl = 'https://image.tmdb.org/t/p/w500';
 
     const[showPopularMovies, setShowPopularMovies] = useState(true)
 
@@ -29,9 +28,9 @@ const Popular = ({movies, fetchPopularMovies, fetchPopularTvShows, tvShows}) => 
         if(!movies) {
             return null
         }
-        return movies.map(({poster_path}) => {
+        return movies.map(({poster_path, name, id}) => {
             return (
-                <Img src={`${imageUrl}${poster_path}`} alt=""/> 
+                <Img src={`${IMAGE_URL}/w500/${poster_path}`} alt={`${name}`} key={id}/> 
             )
         })
     }
@@ -39,9 +38,9 @@ const Popular = ({movies, fetchPopularMovies, fetchPopularTvShows, tvShows}) => 
     const renderPopularTvShows = () => {
         if(!tvShows) return null
 
-        return tvShows.map(({poster_path, id}) => {
+        return tvShows.map(({poster_path, id, name}) => {
             return (
-                <Img src={`${imageUrl}${poster_path}`} key={id} />
+                <Img src={`${IMAGE_URL}/w500/${poster_path}`} alt={`${name}`} key={id}/> 
             )
         })
     }
@@ -50,25 +49,25 @@ const Popular = ({movies, fetchPopularMovies, fetchPopularTvShows, tvShows}) => 
         <PopularSection>
             <Container>
                 <TextWrapper>
-                    <Heading>What's Popular</Heading>
-                    <TypeWrapper>
-                        <Type
+                    <SectionTitle>What's Popular</SectionTitle>
+                    <CategoryWrapper>
+                        <Category
                             className={showPopularMovies ? 'active' : null}
                             onClick={() => {
                                 setShowPopularMovies(true)
                             }}
                         >
                             Movies
-                        </Type>
-                        <Type
+                        </Category>
+                        <Category
                             className={!showPopularMovies ? 'active' : null}
                             onClick={() => {
                                 setShowPopularMovies(false)
                             }}
                         >
                             Tv Shows
-                        </Type>
-                    </TypeWrapper>
+                        </Category>
+                    </CategoryWrapper>
                 </TextWrapper>
                 <Slider {...settings}>
                     {
