@@ -4,6 +4,7 @@ import NowPlayingMovies from './NowPlayingMovies'
 import UpcomingMovies from './UpcomingMovies'
 import TopRatedMovies from './TopRatedMovies'
 import PopularTvShows from './PopularTvShows'
+import AiringToday from './AiringToday'
 
 export {
     Home,
@@ -11,5 +12,6 @@ export {
     NowPlayingMovies,
     UpcomingMovies,
     TopRatedMovies,
-    PopularTvShows
+    PopularTvShows,
+    AiringToday
 }
