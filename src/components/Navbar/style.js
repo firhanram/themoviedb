@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {  black, Container, lightGray, orange } from '../../globalStyle'
+import {  black, Container, darkOrange, lightGray, lightOrange, orange } from '../../globalStyle'
 import { Link } from 'react-router-dom'
 
 export const Nav = styled.nav`
@@ -82,12 +82,18 @@ export const NavLink = styled(Link)`
 `
 
 export const Registration = styled(NavLink)`
-    color: ${black};
+    color: white;
     margin: 0;
-    padding: 0;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
     align-self: center;
+    font-weight: 600;
+    background-color: ${darkOrange};
 
-
+    &:hover {
+        background-color: ${lightOrange};
+        color: white;
+    }
 
     &:not(:first-child) {
         margin-top: 0;
