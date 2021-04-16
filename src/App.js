@@ -12,7 +12,8 @@ import {
   PopularTvShows, 
   AiringToday,
   OnTv,
-  TopRatedTvShows
+  TopRatedTvShows,
+  PopularPeople
 } from './pages';
 import history from './utils/history';
 
@@ -32,6 +33,7 @@ function App(props) {
         <Route exact path="/tv/airing-today" component={AiringToday} />
         <Route exact path="/tv/on-the-air" component={OnTv} />
         <Route exact path="/tv/top-rated" component={TopRatedTvShows} />
+        <Route exact path="/people/popular" component={PopularPeople} />
       </Switch>
     </Router>
   );
