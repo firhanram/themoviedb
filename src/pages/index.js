@@ -7,6 +7,7 @@ import PopularTvShows from './PopularTvShows'
 import AiringToday from './AiringToday'
 import OnTv from "./OnTv"
 import TopRatedTvShows from "./TopRatedTvShows"
+import PopularPeople from "./PopularPeople"
 
 export {
     Home,
@@ -17,5 +18,6 @@ export {
     PopularTvShows,
     AiringToday,
     OnTv,
-    TopRatedTvShows
+    TopRatedTvShows,
+    PopularPeople
 }

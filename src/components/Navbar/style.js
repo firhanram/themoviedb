@@ -20,6 +20,9 @@ export const Brand = styled(Link)`
 
 export const Menu = styled.div`
     display: flex;
+    justify-content: space-between;
+    width: calc(100% - 141.85px);
+    align-items:center;
 `
 
 export const NavMenu = styled.ul`
@@ -27,6 +30,7 @@ export const NavMenu = styled.ul`
     margin-left: 2.5rem;
     align-items: center;
     position: relative;
+   
 `
 
 export const DropdownMenu = styled.div`
@@ -74,5 +78,18 @@ export const NavLink = styled(Link)`
 
     &:not(:first-child) {
         margin-top: 0.5rem;
+    }
+`
+
+export const Registration = styled(NavLink)`
+    color: ${black};
+    margin: 0;
+    padding: 0;
+    align-self: center;
+
+
+
+    &:not(:first-child) {
+        margin-top: 0;
     }
 `

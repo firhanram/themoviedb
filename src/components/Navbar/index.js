@@ -1,4 +1,4 @@
-import { Brand, Wrapper, Nav, Menu, NavMenu, NavList, DropdownMenu, NavLink } from './style'
+import { Brand, Wrapper, Nav, Menu, NavMenu, NavList, DropdownMenu, NavLink, Registration } from './style'
 
 const Navbar = () => {
     return (
@@ -32,6 +32,7 @@ const Navbar = () => {
                             </DropdownMenu>
                         </NavList>
                     </NavMenu>
+                    <Registration>Registration</Registration>
                 </Menu>
             </Wrapper>
         </Nav>
