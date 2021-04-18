@@ -32,7 +32,7 @@ const Navbar = () => {
                             </DropdownMenu>
                         </NavList>
                     </NavMenu>
-                    <Registration>Registration</Registration>
+                    <Registration to="/registration">Registration</Registration>
                 </Menu>
             </Wrapper>
         </Nav>
