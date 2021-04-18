@@ -15,91 +15,66 @@ const initialValues = {
     email: ""
 };
 
-const FormUserDetails = ({nextForm}) => {
+const FormUserDetails = ({nextForm, values, handleChange, handleSubmit}) => {
     return (
-        <Formik
-            initialValues={initialValues}
+        <Form
             onSubmit={(values) => {
-                localStorage.setItem('Data', JSON.stringify(values ))
                 nextForm()
+                handleSubmit()
             }}
         >
-           {({values, handleChange, handleSubmit}) => {
-               console.log(localStorage.getItem('Data'))
-               return (
-                   <Form onSubmit={handleSubmit}>
-                        <FormRow>
-                            <FormCol>
-                                <Label>First Name</Label>
-                                <Input 
-                                    placeholder="First Name" 
-                                    name="firstName" 
-                                    value={values.firstName} 
-                                    onChange={handleChange} 
-                                />
-                            </FormCol>
-                            <FormCol>
-                                <Label>First Name</Label>
-                                <Input 
-                                    placeholder="First Name" 
-                                    name="lastName" 
-                                    value={values.lastName} 
-                                    onChange={handleChange}
-                                />
-                            </FormCol>
+            <FormRow>
+                <FormCol>
+                    <Label>First Name</Label>
+                    <Input
+                        placeholder="First Name"
+                        name="firstName"
+                        value={values.firstName}
+                    />
+                </FormCol>
+                <FormCol>
+                    <Label>Last Name</Label>
+                    <Input
+                        placeholder="Last Name"
+                        name="lastName"
+                        value={values.lastName}
+                    />
+                </FormCol>
+            </FormRow>
+            <Label>Job Desc</Label>
+            <FieldArray name="jobDescs">
+                {({push}) => (
+                    values.jobDescs.map((_, index) => (
+                        <FormRow key={index}>
+                            <Input
+                               placeholder="Job Desc"
+                               name={`jobDescs.${index}.name`} 
+                            />
+                            <Icon
+                                onClick={() => push({name: ""})}
+                            >
+                                <Img src={AddIcon} />
+                            </Icon>
                         </FormRow>
-                        <Label>Job Desc</Label>
-                   <FieldArray
-                        name="jobDescs"
-                   >
-                       {({push}) => (
-                           values.jobDescs.map((_, index) => (
-                               <FormRow>
-                                   <Input
-                                        name={`jobDescs.${index}.name`}
-                                        placeholder="Job Desc"
-                                   />
-                                   <Icon
-                                        onClick={() => {
-                                            push({name: ""})        
-                                        }}
-                                   >
-                                       <Img src={AddIcon} />
-                                   </Icon>
-                               </FormRow>
-                           ))
-                       )}
-                   </FieldArray>
-                   <Label>Gender</Label>
-                   <Input 
-                        as="select" 
-                        name="gender"
-                        onChange={handleChange}
-                        value={values.gender}
-                    >
-                       <option value="">Select Gender</option>
-                       <option value="Male">Male</option>
-                       <option value="Female">Female</option>
-                   </Input>
-                   <Label>Email</Label>
-                   <Input 
-                    name="email" 
-                    value={values.email}
-                    onChange={handleChange} 
-                   />
-                   <Button
-                    type="submit"
-                   >
-                       Next
-                   </Button>
-               </Form>
-               )
-           }
-               
-           }
-
-        </Formik>
+                    ))
+                )}
+            </FieldArray>
+            <Label>Gender</Label>
+            <Input
+                as="select"
+                onChange={handleChange}
+                name="gender"
+            >
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </Input>
+            <Label>Email</Label>
+            <Input name="email" value={values.email} placeholder="Email" />
+            <Button type="submit">Next</Button>
+        </Form>
     )
+
 }
 
 export default connect(null, {nextForm})(FormUserDetails)
