@@ -7,7 +7,7 @@ export const RadioInput = styled(Field)`
     margin-top: 1rem;
 `
 
-export const TextArea = styled.textarea`
+export const TextArea = styled(Field)`
     margin-top: 1rem;
     margin-bottom: 1rem;
     width: 100%;

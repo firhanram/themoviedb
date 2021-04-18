@@ -5,16 +5,6 @@ import { nextForm } from '../../actions/formAction'
 import { Form, FormRow, FormCol, Input, Label, Select, Button} from '../../globalStyle'
 import { Icon, Img } from './style'
 
-const initialValues = {
-    jobDescs: [
-      {name: ""}
-    ],
-    firstName: "",
-    lastName: "",
-    gender: "",
-    email: ""
-};
-
 const FormUserDetails = ({nextForm, values, handleChange, handleSubmit}) => {
     return (
         <Form
@@ -64,6 +54,7 @@ const FormUserDetails = ({nextForm, values, handleChange, handleSubmit}) => {
                 as="select"
                 onChange={handleChange}
                 name="gender"
+                value={values.gender}
             >
                 <option value="">Select Gender</option>
                 <option value="Male">Male</option>
